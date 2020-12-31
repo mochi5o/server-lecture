@@ -32,8 +32,6 @@ $ vim Vagrantfile
 config.vm.network "private_network", ip: "192.168.33.33"
 ```
 
-スクショは[こちら](https://github.com/mochi5o/server-lecture/issues/8)にあります。
-
 Vagrantfileの修正が終わったらVagrantを立ち上げる。
 
 ```
@@ -74,7 +72,6 @@ More information can be found at https://github.com/chef/bento
   1  sudo yum -y install httpd
   2  httpd -v			# バージョンが出たらOK
   3  sudo systemctl start httpd  # Apacheの起動
-### 
 ```
 バージョン情報はこんな感じ。多少ことなっていてもOK
 ```
@@ -132,3 +129,4 @@ phpinfo();
 再び192.168.33.33/test.php にアクセスしてPHPが動作していることを確認する
 
 
+スクショは[こちら](https://github.com/mochi5o/server-lecture/issues/8)にあります。
