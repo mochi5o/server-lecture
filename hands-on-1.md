@@ -16,8 +16,9 @@
 ### FTPクライアントの準備
 
 - cyberduckをインストール
-  - [Windowsの手順](https://tab-log.com/ftp-cyberduck)
-  - [Macの手順](https://tab-log.com/mac-cyberduck)
+  - [ここからインストールできます](https://cyberduck.io/download/)
+    - [Windowsの手順](https://tab-log.com/ftp-cyberduck)
+    - [Macの手順](https://tab-log.com/mac-cyberduck)
 - 接続設定の情報をいれて接続
   - https://github.com/mochi5o/server-lecture/issues/7
 - testフォルダとindex.phpが見えたらOK
