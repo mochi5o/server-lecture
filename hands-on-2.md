@@ -32,7 +32,8 @@ $ vim Vagrantfile
 config.vm.network "private_network", ip: "192.168.33.33"
 ```
 
-スクショは[こちら](https://github.com/mochi5o/server-lecture/issues/8)にあります
+スクショは[こちら](https://github.com/mochi5o/server-lecture/issues/8)にあります。
+
 Vagrantfileの修正が終わったらVagrantを立ち上げる。
 
 ```
