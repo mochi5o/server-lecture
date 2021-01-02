@@ -7,6 +7,8 @@
 
 ### CentOS7の環境を作る
 
+以下、VMとはVirtualMacine、つまり仮想マシンのことです。
+
 VMの設定と作成はGUIからでもできますが、環境を揃えたいので今回はコマンドで作成していきます。
 
 ```
@@ -19,6 +21,7 @@ $ vagrant init bento/centos-7
 ```
 
 Vagrantfileの修正をする。
+
 ~/VM-test/Vagrantfile をVSCodeで開く。
 
 もしくは、vimで開く。
@@ -32,7 +35,7 @@ $ vim Vagrantfile
 config.vm.network "private_network", ip: "192.168.33.33"
 ```
 
-スクショは[こちら](https://github.com/mochi5o/server-lecture/issues/8)にあります。
+設定のスクショは[こちら](https://github.com/mochi5o/server-lecture/issues/8)にあります。
 
 Vagrantfileの修正が終わったらVagrantを立ち上げる。
 
@@ -132,3 +135,23 @@ phpinfo();
 
 
 スクショは[こちら](https://github.com/mochi5o/server-lecture/issues/9)にあります。
+
+### VM関連の使ったコマンドまとめ
+
+- vagrant up
+  - Vagrantfileを元にしてVMを立ち上げるコマンド。
+- vagrant ssh
+  - VMにSSHするためのコマンド。このコマンドでログインした後の操作はVM上でのコマンド実行となる。
+  - VMからログアウトするには`Ctrl＋d` でOK
+- vagrant halt
+  - VMをシャットダウンするコマンド
+
+### ハンズオンが終わったら、、、、
+
+不要な人は環境を削除しておきましょう（もちろん、このままいろいろ遊んでみてもOK）
+
+- VirtualBoxを開いて、今日作ったVMを削除しておく
+  - スクショは[こちら](https://github.com/mochi5o/server-lecture/issues/8#issuecomment-753431124)
+- VM-testディレクトリごと消す
+
+以上！お疲れ様でした。
