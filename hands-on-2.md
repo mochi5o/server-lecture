@@ -130,7 +130,7 @@ Server built:   Nov 16 2020 16:18:20
   6  ls				# おそらくなにもないはずなのでファイルを追加する
   7  sudo touch index.html
 ### test.htmlの編集。中身はなんでもOK
-  8  sudo vi
+  8  sudo vi index.html
 ### Apacheのリスタート
   9  sudo systemctl restart httpd
 ```
@@ -140,7 +140,7 @@ Server built:   Nov 16 2020 16:18:20
 ```
 ### phpのファイルを用意する
  10 sudo touch test.php
- 11 sudo vi
+ 11 sudo vi test.php
 ### test.phpの中身は下記のように編集する
 <?php
 phpinfo();
