@@ -153,7 +153,6 @@ phpinfo();
 
 ```
 ### PHPをインストールする
- 12 sudo apt install ./vagrant_2.2.7_x86_64.deb
  13 sudo yum -y install epel-release
  14 sudo rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-7.rpm
  15 sudo yum install -y --enablerepo=remi,remi-php71 php php-deval php-mbstring php-pdo php-mysqlnd php-gd
