@@ -2,12 +2,43 @@
 
 ### 仮想環境の準備
 
-- [Vagrant](https://www.vagrantup.com/downloads)をインストール
 - [VirtualBox](https://www.virtualbox.org/wiki/Downloads)をインストール
+- [Vagrant](https://www.vagrantup.com/downloads)をインストール
 
-### CentOS7の環境を作る
+VirtualBoxはパソコン上で仮想マシンを動かすためのソフトウェア。
 
-以下、VMとはVirtualMacine、つまり仮想マシンのことです。
+VagrantはVirtualBoxを便利に使うためのインターフェースを提供してくれるソフトウェアです。
+
+以下の記事の前半部分にVagrantとVirtualBoxの概要がわかりやすく記されています。
+
+- https://kitsune.blog/linux-environment
+
+さて、これらのソフトを使って皆さんのPCのなかにもう一個PCを作っていく、というイメージを持っていてください。
+
+このPCのなかに作るPCのことを仮想マシン＝VirtualMacineと言います。
+
+以下、VirtualMacineをVMと表記します。
+
+今回はVMそのものについても深く触れません。以下の参考リンクを読んでイメージをつかんでください。
+
+- https://wa3.i-3-i.info/word11943.html
+- https://wa3.i-3-i.info/word11941.html
+
+
+### 今からやっていく作業の概要
+
+意味不明なコピペが続くかと思いますが、以下の流れでやっていきます。
+
+- VMを立てるのに必要なソフトをインストール（今やったこと）
+- VMを立てる（CentOS）
+- Webサーバーに必要なソフトウェアをインストール
+- PCのなかに仮想マシンを立てて、そこにWebサーバーとして使うためのソフトウェアを入れて、自分のPCと仮想マシンの間でHTTP通信を行います。
+さて、これらのソフトを使って皆さんのPCのなかにもう一個PCを作っていく、というイメージを持っていてください。
+
+
+
+### VM上にCentOS7の環境を作る
+
 
 VMの設定と作成はGUIからでもできますが、環境を揃えたいので今回はコマンドで作成していきます。
 
@@ -29,9 +60,9 @@ Vagrantfileの修正をする。
 $ vim Vagrantfile
 ```
 
-ファイルを修正していく
+Vagrantfile（Vanrantの設定ファイル）を修正していく
 ```
-# 35行目のコメントアウトを外す、さらに ip: "192.168.33.10" の末尾の数字を下記に換えておく
+# 35行目のコメントアウトを外す、さらに ip: "192.168.33.10" の末尾の数字を下記にかえておく
 config.vm.network "private_network", ip: "192.168.33.33"
 ```
 
@@ -45,6 +76,8 @@ $ vagrant up
 ```
 
 時間がかかるのでしばし待つ。。。
+
+プロンプトが返ってきたら、以下のコマンド。
 
 ```
 $ vagrant ssh
@@ -133,10 +166,12 @@ phpinfo();
 ```
 再び192.168.33.33/test.php にアクセスしてPHPが動作していることを確認する
 
-
 スクショは[こちら](https://github.com/mochi5o/server-lecture/issues/9)にあります。
 
-### VM関連の使ったコマンドまとめ
+### Vagrant関連のコマンドまとめ
+
+全てvagrantfileが存在するディレクトリでのみ実行可能です。
+VMの起動やシャットダウンはVirtualBoxのGUIからも実行可能です。
 
 - vagrant up
   - Vagrantfileを元にしてVMを立ち上げるコマンド。
@@ -148,7 +183,7 @@ phpinfo();
 
 ### ハンズオンが終わったら、、、、
 
-不要な人は環境を削除しておきましょう（もちろん、このままいろいろ遊んでみてもOK）
+今回作ったVM環境、不要な人は削除しておきましょう（もちろん、このままVMでいろいろ遊んでみてもOK）
 
 - VirtualBoxを開いて、今日作ったVMを削除しておく
   - スクショは[こちら](https://github.com/mochi5o/server-lecture/issues/8#issuecomment-753431124)
